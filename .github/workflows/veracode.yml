@@ -17,9 +17,6 @@ jobs:
       - name: Create Vendor Folder
         run: go mod vendor
 
-      - name: Mod Download
-        run: go mod download
-
       - name: Build
         run: go build -v ./...
 
