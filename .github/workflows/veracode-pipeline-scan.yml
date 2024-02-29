@@ -23,9 +23,10 @@ jobs:
           export PATH="$GOPATH/bin:$PATH" &&
           go install github.com/relaxnow/vcgopkg@latest
           vcgopkg
+          ls
 
       - name: Pipeline Scan
         run: |
           curl -sSO https://downloads.veracode.com/securityscan/pipeline-scan-LATEST.zip
           unzip -o pipeline-scan-LATEST.zip
-          java -jar pipeline-scan.jar -vid ${{ secrets.VERACODE_API_ID }} -vkey ${{ secrets.VERACODE_API_KEY }} --json_output_file="results.json" -f *.zip || true
+          java -jar pipeline-scan.jar -vid ${{ secrets.VERACODE_API_ID }} -vkey ${{ secrets.VERACODE_API_KEY }} --json_output_file="results.json" -f app.zip || true
