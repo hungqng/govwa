@@ -30,4 +30,4 @@ jobs:
           curl -sSO https://downloads.veracode.com/securityscan/pipeline-scan-LATEST.zip
           unzip -o pipeline-scan-LATEST.zip
           ls
-          java -jar pipeline-scan.jar -vid ${{ secrets.VERACODE_API_ID }} -vkey ${{ secrets.VERACODE_API_KEY }} --json_output_file="results.json" -f /home/runner/work/govwa/govwa/veracode/govwa_app_$(date +'%Y%m%d%H%M%S').zip || true
+          java -jar pipeline-scan.jar -vid ${{ secrets.VERACODE_API_ID }} -vkey ${{ secrets.VERACODE_API_KEY }} --json_output_file="results.json" -f veracode/*.zip || true
