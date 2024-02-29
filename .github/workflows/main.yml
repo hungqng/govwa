@@ -34,7 +34,7 @@ jobs:
           # sandboxname: 'GitHub'
           createsandbox: false
           # Build artifact directory
-          filepath: '*.zip'
+          filepath: veracode/*.zip
           # Scan name
           version: ${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}
           # API credentials
