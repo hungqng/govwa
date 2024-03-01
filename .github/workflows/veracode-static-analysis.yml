@@ -11,9 +11,9 @@ jobs:
         uses: actions/checkout@v2
         
       - name: Set up Go
-        uses: actions/setup-go@v4
+        uses: actions/setup-go@v2
         with:
-          go-version-file: go.mod
+          go-version: 1.22
       - name: Create Vendor Folder
         run: go mod vendor
       - name: Build
@@ -23,7 +23,7 @@ jobs:
         run: |
           export GOPATH=`go env GOPATH` &&
           export PATH="$GOPATH/bin:$PATH" &&
-          go get github.com/relaxnow/vcgopkg@latest
+          go install github.com/relaxnow/vcgopkg@latest
           vcgopkg
 
       - name: Veracode Upload And Scan
