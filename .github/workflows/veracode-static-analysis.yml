@@ -42,6 +42,5 @@ jobs:
           # API credentials
           vid: '${{ secrets.VERACODE_API_ID }}'
           vkey: '${{ secrets.VERACODE_API_KEY }}'
-          scantimeout: 60
           # Optional arguments
           deleteincompletescan: 2
